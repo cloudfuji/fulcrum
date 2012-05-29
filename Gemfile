@@ -44,4 +44,8 @@ group :development, :test do
   gem 'jasmine', '1.1.0'
   gem 'capybara'
   gem 'database_cleaner'
+  unless ENV["CI"]
+    gem 'ruby-debug', :platform => :mri_18
+    gem (RUBY_VERSION == "1.9.2" ? 'ruby-debug19' : 'debugger'), :platform => :mri_19
+  end
 end
