@@ -26,9 +26,9 @@ gem 'cancan', '1.6.1'
 gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitions"]
 
 # Cloudfuji-related deps
-gem 'fulcrum_cloudfuji', ">= 0.1.0"
+gem 'fulcrum_cloudfuji', ">= 0.1.1"
 gem 'tane', :group => :development
-gem 'airbrake_user_attributes'
+gem 'airbrake_user_attributes', '>= 0.1.3'
 
 gem 'fastercsv', '1.5.3', :platforms => :ruby_18
 # (using standard csv lib if ruby version is 1.9)
