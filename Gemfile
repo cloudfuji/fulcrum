@@ -27,7 +27,7 @@ gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitio
 
 # Cloudfuji-related deps
 gem 'fulcrum_cloudfuji', ">= 0.1.1"
-gem 'tane', :group => :development
+gem 'tane', '>= 0.0.5', :group => :development
 gem 'airbrake_user_attributes', '>= 0.1.3'
 
 gem 'fastercsv', '1.5.3', :platforms => :ruby_18
