@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529045850) do
+ActiveRecord::Schema.define(:version => 20120504152649) do
 
   create_table "changesets", :force => true do |t|
     t.integer  "story_id"
     t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "notes", :force => true do |t|
     t.text     "note"
     t.integer  "user_id"
     t.integer  "story_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.string   "ido_id"
   end
 
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(:version => 20120529045850) do
     t.date     "start_date"
     t.integer  "iteration_start_day", :default => 1
     t.integer  "iteration_length",    :default => 1
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.integer  "default_velocity",    :default => 10
     t.string   "ido_id"
   end
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20120529045850) do
     t.integer  "requested_by_id"
     t.integer  "owned_by_id"
     t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                               :null => false
+    t.datetime "updated_at",                               :null => false
     t.decimal  "position"
     t.string   "labels"
     t.string   "ido_id"
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(:version => 20120529045850) do
     t.string   "email",                                 :default => "",   :null => false
     t.string   "encrypted_password",     :limit => 128, :default => "",   :null => false
     t.string   "reset_password_token"
-    t.string   "remember_token"
     t.datetime "remember_created_at"
     t.integer  "sign_in_count",                         :default => 0
     t.datetime "current_sign_in_at"
@@ -78,17 +77,17 @@ ActiveRecord::Schema.define(:version => 20120529045850) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "password_salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
     t.string   "name"
     t.string   "initials"
     t.boolean  "email_delivery",                        :default => true
     t.boolean  "email_acceptance",                      :default => true
     t.boolean  "email_rejection",                       :default => true
-    t.datetime "reset_password_sent_at"
-    t.string   "locale"
     t.string   "ido_id"
+    t.datetime "reset_password_sent_at"
     t.boolean  "active",                                :default => true
+    t.string   "locale"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
