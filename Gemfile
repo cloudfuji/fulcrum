@@ -1,5 +1,13 @@
 source 'http://rubygems.org'
 
+# Allows easy switching between locally developed gems, and gems installed from rubygems.org
+# See README for more info at: https://github.com/ndbroadbent/bundler_local_development
+gem 'bundler_local_development', :group => :development, :require => false
+begin
+  require 'bundler_local_development'
+rescue LoadError
+end
+
 gem 'rails', '~> 3.2.2'
 
 # Gems used only for assets and not required
@@ -13,9 +21,14 @@ end
 
 gem 'jquery-rails'
 
-gem 'devise'
-gem 'cancan'
+gem 'devise', '~> 1.5.0'
+gem 'cancan', '1.6.1'
 gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitions"]
+
+# Cloudfuji-related deps
+gem 'fulcrum_cloudfuji', ">= 0.1.0"
+gem 'tane', :group => :development
+gem 'airbrake_user_attributes'
 
 gem 'fastercsv', '1.5.3', :platforms => :ruby_18
 # (using standard csv lib if ruby version is 1.9)
@@ -27,7 +40,7 @@ end
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails' unless ENV['HOSTING_PLATFORM'] == "CLOUDFUJI"
   gem 'jasmine', '1.1.0'
   gem 'capybara'
   gem 'database_cleaner'

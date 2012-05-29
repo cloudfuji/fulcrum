@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120504152649) do
+ActiveRecord::Schema.define(:version => 20120529045850) do
 
   create_table "changesets", :force => true do |t|
     t.integer  "story_id"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20120504152649) do
     t.integer  "story_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ido_id"
   end
 
   create_table "projects", :force => true do |t|
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20120504152649) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "default_velocity",    :default => 10
+    t.string   "ido_id"
   end
 
   create_table "projects_users", :id => false, :force => true do |t|
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20120504152649) do
     t.datetime "updated_at"
     t.decimal  "position"
     t.string   "labels"
+    t.string   "ido_id"
   end
 
   create_table "users", :force => true do |t|
@@ -84,6 +87,8 @@ ActiveRecord::Schema.define(:version => 20120504152649) do
     t.boolean  "email_rejection",                       :default => true
     t.datetime "reset_password_sent_at"
     t.string   "locale"
+    t.string   "ido_id"
+    t.boolean  "active",                                :default => true
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true
