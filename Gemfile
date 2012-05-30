@@ -35,6 +35,8 @@ gem 'fastercsv', '1.5.3', :platforms => :ruby_18
 
 group :production do
   gem 'pg'
+  # Use thin for development
+  gem 'thin', :platform => :ruby
 end
 
 group :development, :test do
