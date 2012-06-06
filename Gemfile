@@ -26,7 +26,7 @@ gem 'cancan', '1.6.1'
 gem 'transitions', '0.0.9', :require => ["transitions", "active_record/transitions"]
 
 # Cloudfuji-related deps
-gem 'fulcrum_cloudfuji', ">= 0.2.1"
+gem 'fulcrum_cloudfuji', ">= 0.2.2"
 gem 'tane', '>= 0.0.5', :group => :development
 gem 'airbrake_user_attributes', '>= 0.1.3'
 

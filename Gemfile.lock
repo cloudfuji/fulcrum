@@ -93,7 +93,7 @@ GEM
     fastercsv (1.5.3)
     ffi (1.0.11)
     fssm (0.2.8.1)
-    fulcrum_cloudfuji (0.2.1)
+    fulcrum_cloudfuji (0.2.2)
       cloudfuji (>= 0.0.44)
       devise_cloudfuji_authenticatable
       uuid
@@ -235,7 +235,7 @@ DEPENDENCIES
   ejs
   factory_girl_rails
   fastercsv (= 1.5.3)
-  fulcrum_cloudfuji (>= 0.2.1)
+  fulcrum_cloudfuji (>= 0.2.2)
   jasmine (= 1.1.0)
   jquery-rails
   pg
