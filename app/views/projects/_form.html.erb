@@ -3,6 +3,11 @@
   <%= render 'shared/form_errors', :object => @project if @project.errors.any? %>
 
   <div class="field-wrapper">
+    <label for="ido_id">ido_id</label>
+    <div class="field"><%= @project.ido_id %></div>
+  </div>
+
+  <div class="field-wrapper">
     <%= f.label :name %>
     <div class="field"><%= f.text_field :name %></div>
   </div>
